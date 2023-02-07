@@ -1,0 +1,30 @@
+version: '3.7'
+
+services: 
+  products_db:
+    image: mysql
+    environment:
+      MYSQL_DATABASE: 'products'
+      MYSQL_USER: 'ebenezer'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - 3306:3306
+    volumes: 
+      - products_db:/var/lib/mysql
+
+  orders_db:
+    image: mysql
+    environment:
+      MYSQL_DATABASE: 'orders'
+      MYSQL_USER: 'ebenezer'
+      MYSQL_ROOT_PASSWORD: 'password'
+      MYSQL_PASSWORD: 'password'
+    ports:
+      - 3307:3306
+    volumes: 
+    - orders_db:/var/lib/mysql
+
+volumes:
+  products_db:
+  orders_db:

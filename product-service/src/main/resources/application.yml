@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: product-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/products
+    username: ebenezer
+    password: password
+eureka:
+    instance:
+      hostname: localhost
+    client:
+      serviceUrl:
+        defaultZone: http://localhost:8761/eureka
+server:
+  port: 0
